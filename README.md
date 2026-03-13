@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" width="128" alt="DeltaLitmus Logo">
+  <img src="DeltaLitmus.png" width="128" alt="Logo">
 </p>
 
 # DeltaLitmus-Engine ⚡
