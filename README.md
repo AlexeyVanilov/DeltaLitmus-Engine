@@ -15,15 +15,6 @@
 2. Add the engine files to your solution.
 3. Start building your high-speed 2D project.
 
-## 📚 Documentation
-
-**Where is the documentation?** Documentation? It went straight to hell (or I was just too lazy to write it). 
-
-If you're a real developer, you know the drill:
-1. **The source code is your manual.**
-2. The architecture is concise enough to understand in 15 minutes.
-3. If you get lost, refer to point #1.
-
 ## ⚙️ Requirements
 
 * .NET SDK
