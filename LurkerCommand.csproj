@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RollForward>Major</RollForward>
+    
+    <PublishAot>true</PublishAot>
+    
+    <OptimizationPreference>Speed</OptimizationPreference>
+    <StackTraceSupport>true</StackTraceSupport> <InvariantGlobalization>true</InvariantGlobalization> <PublishReadyToRun>false</PublishReadyToRun> <TieredCompilation>false</TieredCompilation>
+    <StripSymbols>true</StripSymbols>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <AssemblyName>DeltaLitmus Engine</AssemblyName>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DeltaLitmus\Game\**" />
+    <EmbeddedResource Remove="DeltaLitmus\Game\**" />
+    <None Remove="DeltaLitmus\Game\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TrimmerRootAssembly Include="MonoGame.Framework" />
+    <TrimmerRootAssembly Include="$(AssemblyName)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Icon.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Icon.bmp">
+      <LogicalName>Icon.bmp</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.2.*" /> <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.2.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Content\Fonts\" />
+  </ItemGroup>
+
+  <Target Name="RestoreDotnetTools" BeforeTargets="CollectPackageReferences">
+    <Message Text="Restoring dotnet tools..." Importance="High" />
+    <Exec Command="dotnet tool restore" />
+  </Target>
+</Project>
