@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" width="128" alt="DeltaLitmus Logo">
+</p>
+
 # DeltaLitmus-Engine ⚡
 
 **DeltaLitmus-Engine** is an ultra-lightweight, high-performance 2D engine built on **C#** and the **MonoGame** framework. Designed for developers who prioritize raw speed and minimal overhead.
