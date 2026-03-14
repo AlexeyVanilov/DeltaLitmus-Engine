@@ -2,6 +2,6 @@
 {
     public struct ColliderComponent {
         public bool isTrigger;
-        public readonly bool isStatic;
+        public bool isStatic;
     }
 }

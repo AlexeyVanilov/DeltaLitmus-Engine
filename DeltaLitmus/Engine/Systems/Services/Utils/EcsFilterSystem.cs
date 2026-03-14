@@ -4,7 +4,7 @@ using DeltaLitmus.Systems.Services.Utils;
 using System;
 using System.Collections.Generic;
 
-namespace DeltaLitmus.Systems.Utils {
+namespace DeltaLitmus.Systems.Services.Utils {
     public abstract class EcsFilterSystem<T1, T2> : IEcsSystem
     where T1 : struct
     where T2 : struct

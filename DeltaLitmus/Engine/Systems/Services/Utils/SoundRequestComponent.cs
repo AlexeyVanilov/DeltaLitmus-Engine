@@ -1,4 +1,4 @@
-﻿namespace DeltaLitmus.Systems.Utils {
+﻿namespace DeltaLitmus.Systems.Services.Utils {
     public struct SoundRequestComponent
     {
         public string ClipName;

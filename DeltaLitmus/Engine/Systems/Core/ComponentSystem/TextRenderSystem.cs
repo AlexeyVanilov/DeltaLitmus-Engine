@@ -1,7 +1,7 @@
 ﻿using DeltaLitmus.Components.Core;
 using DeltaLitmus.Components.UI;
 using DeltaLitmus.Core.SceneSystem;
-using DeltaLitmus.Systems.Utils;
+using DeltaLitmus.Systems.Services.Utils;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace DeltaLitmus.Systems.Core.ComponentSystem

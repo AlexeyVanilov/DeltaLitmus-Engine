@@ -1,8 +1,7 @@
-﻿using DeltaLitmus.Systems.Services.Utils;
-using System;
+﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace DeltaLitmus.Systems.Utils
+namespace DeltaLitmus.Systems.Services.Utils
 {
     public sealed class ComponentStorage<T> : IStorage where T : struct
     {
