@@ -13,7 +13,6 @@ namespace DeltaLitmus.Services
         private const string fontsCategory = "Fonts";
 
         private static readonly Dictionary<string, object> _cache = new(128);
-
         public static void Init(ContentManager content) => _content = content;
 
         public static T Get<T>(string path)

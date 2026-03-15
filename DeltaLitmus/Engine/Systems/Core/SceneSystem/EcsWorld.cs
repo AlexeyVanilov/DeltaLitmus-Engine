@@ -83,6 +83,27 @@ namespace DeltaLitmus.Core.SceneSystem
             GetStorage<T>().Remove(entity.Id);
         }
 
+        public void Dispose() {
+            foreach (var storage in _storages.Values)
+            {
+                if (storage is IDisposable disposableStorage)
+                {
+                    disposableStorage.Dispose();
+                }
+                ((IStorage)storage).Clear();
+            }
+            _storages.Clear();
+
+            _nextId = 0;
+            _freeIds.Clear();
+            _queryCache.Clear();
+
+            Array.Clear(_masks, 0, _masks.Length);
+            Array.Clear(_versions, 0, _versions.Length);
+
+            Camera = null;
+        }
+
         public ReadOnlySpan<int> Query<T1>() where T1 : struct
         {
             _queryCache.Clear();

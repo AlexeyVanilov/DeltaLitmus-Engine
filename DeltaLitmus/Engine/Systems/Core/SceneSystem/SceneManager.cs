@@ -6,23 +6,16 @@ namespace DeltaLitmus.Systems.Core.SceneSystem
 {
     public static class SceneManager
     {
-        private static readonly List<Scene> _scenes = new();
+        private static readonly List<Scene> _scenes = new(16);
         private static Scene _activeScene;
-
-        public static Scene ActiveScene => _activeScene;
+        private static int _nextSceneIndex = -1;
 
         public static void RegisterScene(Scene scene) => _scenes.Add(scene);
 
-        public static void LoadScene(byte index)
-        {
-            if (index >= _scenes.Count) return;
+        public static void LoadScene(byte index) => _nextSceneIndex = index;
 
-            _activeScene?.Dispose();
-            _activeScene = _scenes[index];
-            _activeScene.Load();
-        }
-
+        public static void FixedUpdate(float fixedTime) => _activeScene?.FixedUpdate(fixedTime);
         public static void Update(GameTime gt) => _activeScene?.Update(gt);
-        public static void Draw(GameTime gt, SpriteBatch sb) => _activeScene?.Draw(gt, sb);
+        public static void Draw(GameTime gt, SpriteBatch sb, float alpha) => _activeScene?.Draw(gt, sb, alpha);
     }
 }

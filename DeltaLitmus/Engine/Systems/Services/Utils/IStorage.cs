@@ -1,5 +1,6 @@
 ﻿namespace DeltaLitmus.Systems.Services.Utils {
-    internal interface IStorage {
+    public interface IStorage {
         void Remove(int entityId);
+        void Clear();
     }
 }
