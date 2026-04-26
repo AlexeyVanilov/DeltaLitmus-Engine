@@ -9,6 +9,14 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <RootNamespace>DeltaLitmus</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Icon.ico" />
@@ -29,11 +37,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Examples\" />
-    <Folder Include="Source\Core\RenderSystem\" />
-    <Folder Include="Source\Core\TransformSystem\" />
-    <Folder Include="Source\Models\" />
-    <Folder Include="Source\Utils\" />
-    <Folder Include="Source\Specs\" />
+    <Folder Include="src\Core\RenderSystem\" />
+    <Folder Include="src\Models\" />
+    <Folder Include="src\Utils\" />
+    <Folder Include="src\Specs\" />
   </ItemGroup>
   <Target Name="RestoreDotnetTools" BeforeTargets="CollectPackageReferences">
     <Message Text="Restoring dotnet tools (this might take a while depending on your internet speed and should only happen upon building your project for the first time, or after upgrading MonoGame, or clearing your nuget cache)" Importance="High" />
