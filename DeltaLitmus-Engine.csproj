@@ -37,7 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Examples\" />
-    <Folder Include="src\Core\RenderSystem\" />
     <Folder Include="src\Models\" />
     <Folder Include="src\Utils\" />
     <Folder Include="src\Specs\" />
